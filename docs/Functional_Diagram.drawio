@@ -1,0 +1,75 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" version="27.0.9">
+  <diagram name="Page-1" id="XL6Kr8uLoP16Gxa3yF6F">
+    <mxGraphModel dx="983" dy="638" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="0CZAWKwhJXgNwnI11YMt-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="0CZAWKwhJXgNwnI11YMt-1" target="0CZAWKwhJXgNwnI11YMt-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0CZAWKwhJXgNwnI11YMt-1" value="Network Devices&#xa;Firewalls, Routers,&#xa;Web Servers, Proxies" style="shape=network;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="240" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0CZAWKwhJXgNwnI11YMt-2" value="Log Collection&lt;div&gt;(Kafka)&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="240" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0CZAWKwhJXgNwnI11YMt-3" value="Log Parser &amp;&#xa;Preprocessor" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="240" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0CZAWKwhJXgNwnI11YMt-4" value="Feature Extraction" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="240" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0CZAWKwhJXgNwnI11YMt-5" value="LLM Detection Engine&lt;br&gt;(Fine-tuned LLM/&lt;div&gt;Pre Trained)&lt;/div&gt;" style="doubleEllipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="760" y="240" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0CZAWKwhJXgNwnI11YMt-6" value="Explanation Module&lt;br&gt;• Human-readable alerts" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="760" y="360" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0CZAWKwhJXgNwnI11YMt-7" value="Model Training Pipeline" style="shape=process;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="760" y="120" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0CZAWKwhJXgNwnI11YMt-8" value="Labeled Dataset" style="shape=document;fillColor=#e6ffe6;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="120" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0CZAWKwhJXgNwnI11YMt-9" edge="1" parent="1" source="0CZAWKwhJXgNwnI11YMt-1" target="0CZAWKwhJXgNwnI11YMt-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0CZAWKwhJXgNwnI11YMt-10" edge="1" parent="1" source="0CZAWKwhJXgNwnI11YMt-2" target="0CZAWKwhJXgNwnI11YMt-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0CZAWKwhJXgNwnI11YMt-11" edge="1" parent="1" source="0CZAWKwhJXgNwnI11YMt-3" target="0CZAWKwhJXgNwnI11YMt-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0CZAWKwhJXgNwnI11YMt-12" edge="1" parent="1" source="0CZAWKwhJXgNwnI11YMt-4" target="0CZAWKwhJXgNwnI11YMt-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0CZAWKwhJXgNwnI11YMt-13" edge="1" parent="1" source="0CZAWKwhJXgNwnI11YMt-5" target="0CZAWKwhJXgNwnI11YMt-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0CZAWKwhJXgNwnI11YMt-14" style="entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="0CZAWKwhJXgNwnI11YMt-6" target="0CZAWKwhJXgNwnI11YMt-17">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="850" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0CZAWKwhJXgNwnI11YMt-15" edge="1" parent="1" source="0CZAWKwhJXgNwnI11YMt-8" target="0CZAWKwhJXgNwnI11YMt-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0CZAWKwhJXgNwnI11YMt-16" edge="1" parent="1" source="0CZAWKwhJXgNwnI11YMt-7" target="0CZAWKwhJXgNwnI11YMt-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0CZAWKwhJXgNwnI11YMt-17" value="Dashboard&lt;br&gt;UI interface" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="760" y="480" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0CZAWKwhJXgNwnI11YMt-18" value="&lt;p style=&quot;margin: 0px; font-width: normal; font-size: 20.7px; line-height: normal; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; text-align: start;&quot; class=&quot;p1&quot;&gt;LLM-Powered Network Anomaly Detection System&lt;/p&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="160" y="80" width="280" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="0CZAWKwhJXgNwnI11YMt-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="0CZAWKwhJXgNwnI11YMt-20" target="0CZAWKwhJXgNwnI11YMt-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0CZAWKwhJXgNwnI11YMt-20" value="Log Ingestion&lt;br&gt;(Syslog)" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="360" width="120" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
