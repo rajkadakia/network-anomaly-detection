@@ -68,13 +68,6 @@ python3 fine_tune_reduced.py
 ```
 # Generate processed dataset
 python3 historical_data.py
-
-# Expected output structure
-├── CIC-IDS2017
-│   ├── Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv
-│   ├── Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv
-│   └── ... 
-└── historical_data.csv
 ```
 
 ## 🖥️ Usage
