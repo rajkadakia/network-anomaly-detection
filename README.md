@@ -15,7 +15,7 @@ This system implements the specifications from the [Business Requirements Docume
 
 ### 1. Clone Repository
 ```
-git clone https://github.com/yourusername/network-anomaly-detection.git
+git clone https://github.com/rajkadakia/network-anomaly-detection.git
 cd network-anomaly-detection
 ```
 
