@@ -5,7 +5,7 @@
 A machine learning system for real-time network anomaly detection using fine-tuned FLAN-T5 model, aligned with BRD requirements for enterprise network monitoring.
 
 ## 📋 Project Overview
-This system implements the specifications from the [Business Requirements Document (BRD)](HP_BRD.pdf) to:
+This system implements the specifications from the [Business Requirements Document (BRD)](docs/HP_BRD.pdf) to:
 - Automatically detect unusual patterns in network logs
 - Process 2.8M+ records with 30%+ productivity improvement for IT teams
 - Provide real-time analysis and visualizations of anomalies
@@ -85,5 +85,5 @@ python3 inference.py
 
 ## 📚 References
 - [CIC-IDS2017 Dataset](https://www.unb.ca/cic/datasets/ids-2017.html)
-- [BRD Documentation](HP_BRD.pdf)
+- [BRD Documentation](docs/HP_BRD.pdf)
 - [FLAN-T5 Paper](https://arxiv.org/abs/2210.11416)
