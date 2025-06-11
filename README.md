@@ -59,7 +59,7 @@ tokenizer.save_pretrained("./flan-t5-base")
 python3 fine_tune_model.py
 ```
 
-### Reduced Dataset Training (Recommended for M1/M2 Macs)
+### Reduced Dataset Training
 ```
 python3 fine_tune_reduced.py
 ```
