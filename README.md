@@ -45,7 +45,7 @@ This system implements the specifications from the [Business Requirements Docume
 | Web Attack - XSS | Cross-site scripting attacks targeting web browsers |
 
 ## 📁 Repository Structure
-
+```
 network-anomaly-detection/
 ├── datasets/ # Training and sample data
 ├── docs/ # Documentation and diagrams
@@ -55,6 +55,7 @@ network-anomaly-detection/
 ├── tests/ # Unit and integration tests
 ├── configs/ # Configuration files
 └── README.md # This file
+```
 
 ## 🛠️ Setup Instructions
 
