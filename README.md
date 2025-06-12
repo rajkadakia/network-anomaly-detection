@@ -1,6 +1,6 @@
 # LLM-Powered Network Anomaly Detection System
 
-![Project Banner](https://via.placeholder.com/800x200.png?text=Network+Anomaly+Detection+with+FLAN-T5)
+![Project Banner](docs/Functional_Diagram.jpg)
 
 A machine learning system for real-time network anomaly detection using fine-tuned FLAN-T5 model, aligned with BRD requirements for enterprise network monitoring.
 
@@ -13,13 +13,13 @@ This system implements the specifications from the [Business Requirements Docume
 
 ## 🛠️ Setup Instructions
 
-### 1. Clone Repository
+### Clone Repository
 ```
 git clone https://github.com/rajkadakia/network-anomaly-detection.git
 cd network-anomaly-detection
 ```
 
-### 2. Handle Large Files
+### Handle Large Files
 **Due to Git LFS limitations:**
 ```
 # Download dataset manually
@@ -30,9 +30,15 @@ mkdir -p CIC-IDS2017
 unzip CIC-IDS2017.zip -d CIC-IDS2017/
 ```
 
-### 3. Install Requirements
+### Install Requirements
 ```
 pip install -r requirements.txt
+```
+
+### Prepare Training Dataset
+```
+# Generate processed dataset
+python3 scripts/historical_data.py
 ```
 
 ## 🔧 Model Setup
@@ -48,35 +54,29 @@ tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
 
 # Save for offline use
-model.save_pretrained("./flan-t5-base")
-tokenizer.save_pretrained("./flan-t5-base")
+model.save_pretrained("/models/flan-t5-base")
+tokenizer.save_pretrained("/models/flan-t5-base")
 ```
 
 ## 🚀 Training Pipeline
-
 ### Full Dataset Training
 ```
-python3 fine_tune_model.py
+python3 scripts/fine_tune_model.py
 ```
 
 ### Reduced Dataset Training
 ```
-python3 fine_tune_reduced.py
-```
-
-## 📊 Dataset Preparation
-```
-# Generate processed dataset
-python3 historical_data.py
+python3 scripts/fine_tune_reduced.py
 ```
 
 ## 🖥️ Usage
 ```
 # Start real-time inference engine
-python3 inference.py
+python3 scripts/inference.py
 ```
 
 ## 📚 References
-- [CIC-IDS2017 Dataset](https://www.unb.ca/cic/datasets/ids-2017.html)
 - [BRD Documentation](docs/HP_BRD.pdf)
+- [Project Architecture](docs/Functional_Diagram.jpg)
+- [CIC-IDS2017 Dataset](https://www.unb.ca/cic/datasets/ids-2017.html)
 - [FLAN-T5 Paper](https://arxiv.org/abs/2210.11416)
