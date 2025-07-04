@@ -1,0 +1,9 @@
+pandas
+numpy
+scikit-learn
+#glob
+#os
+transformers
+peft
+datasets
+tqdm
