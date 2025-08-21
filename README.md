@@ -1,119 +1,139 @@
 # Network Anomaly Detection
-![GitHub Created At](https://img.shields.io/github/created-at/rajkadakia/network-anomaly-detection)
-![GitHub contributors](https://img.shields.io/github/contributors/rajkadakia/network-anomaly-detection)
-![GitHub License](https://img.shields.io/github/license/rajkadakia/network-anomaly-detection)
+
+![Created At](https://img.shields.io/github/created-at/rajkadakia/network-anomaly-detection)
+![Contributors](https://img.shields.io/github/contributors/rajkadakia/network-anomaly-detection)
+![License](https://img.shields.io/github/license/rajkadakia/network-anomaly-detection)
 
 ## Overview
 
-This project implements a network anomaly detection pipeline using machine learning and large language models (LLMs). It is designed to process network logs, extract features, and detect various types of network attacks in real-time or batch mode. The system is built to be extensible and leverages the CIC-IDS2017 dataset for training and evaluation.
+This repository implements a **state-of-the-art network anomaly detection pipeline**, combining **classical machine learning** techniques with **large language models (LLMs)**. Designed for both **real-time** and **batch processing**, the system processes network logs, extracts relevant features, and detects a wide range of network attacks.
 
-### Functional Architecture
+Built for **extensibility and scalability**, it utilizes the **CIC-IDS2017 dataset** for training, evaluation, and experimentation.
 
-The pipeline consists of the following stages (see Functional_Diagram.jpg):
+---
 
-1. **Log Collection**: Network logs are collected from devices such as firewalls, routers, web servers, and proxies.
-2. **Log Parsing & Preprocessing**: Raw logs are parsed and preprocessed for feature extraction.
-3. **Feature Extraction**: Relevant features are extracted from the logs for model input.
-4. **Detection Engine**: A fine-tuned LLM (e.g., T5) analyzes the features and classifies network events as benign or various attack types.
-5. **Explanation Module**: Generates human-readable alerts for detected anomalies.
-6. **Model Training Pipeline**: Supports training and fine-tuning on labeled datasets.
+## Functional Architecture
+
+The pipeline is structured into the following stages:
+*(See the [functional diagram](https://github.com/rajkadakia/network-anomaly-detection/blob/main/docs/Functional_Diagram.jpg) for a visual representation)*
+
+1. **Log Collection** – Aggregate logs from firewalls, routers, web servers, proxies, and other network devices.
+2. **Log Parsing & Preprocessing** – Convert raw logs into structured formats suitable for analysis.
+3. **Feature Extraction** – Extract key features from logs to serve as model inputs.
+4. **Detection Engine** – Analyze features using a fine-tuned LLM (e.g., **FLAN-T5**) to classify events as **benign** or various **attack types**.
+5. **Explanation Module** – Generate **human-readable alerts** and contextual information for detected anomalies.
+6. **Model Training Pipeline** – Supports **training, fine-tuning, and evaluation** on labeled datasets.
+
+---
 
 ## Dataset
 
-- The main dataset used is [CIC-IDS2017](https://www.unb.ca/cic/datasets/ids-2017.html), located in the datasets directory.
-- Preprocessed and reduced versions are available for faster experimentation.
+* **Primary Dataset**: [CIC-IDS2017](https://www.unb.ca/cic/datasets/ids-2017.html), not included in the `datasets` directory due to size.
+* **Preprocessed and Reduced Versions**: Available for rapid experimentation.
+
+---
 
 ## Installation
 
 1. **Clone the repository**:
-   ```sh
-   git clone https://github.com/rajkadakia/network-anomaly-detection.git
-   cd network-anomaly-detection
-   ```
+
+```bash
+git clone https://github.com/rajkadakia/network-anomaly-detection.git
+cd network-anomaly-detection
+```
 
 2. **Set up a Python virtual environment**:
-   ```sh
-   python -m venv venv
-   source venv/bin/activate
-   ```
+
+```bash
+python -m venv venv
+source venv/bin/activate  # Linux/macOS
+venv\Scripts\activate     # Windows
+```
 
 3. **Download the CIC-IDS2017 dataset**:
-   - Using `wget`:
-     ```sh
-     wget https://www.unb.ca/cic/datasets/machine-learning-ids-2017.html -O datasets/CIC-IDS2017.zip
-     unzip datasets/CIC-IDS2017.zip -d datasets/CIC-IDS2017
-     ```
-   - Or using `curl`:
-     ```sh
-     curl -L https://www.unb.ca/cic/datasets/machine-learning-ids-2017.html -o datasets/CIC-IDS2017.zip
-     unzip datasets/CIC-IDS2017.zip -d datasets/CIC-IDS2017
-     ```
+
+```bash
+# Using wget
+wget https://www.unb.ca/cic/datasets/machine-learning-ids-2017.html -O datasets/CIC-IDS2017.zip
+unzip datasets/CIC-IDS2017.zip -d datasets/CIC-IDS2017
+
+# Or using curl
+curl -L https://www.unb.ca/cic/datasets/machine-learning-ids-2017.html -o datasets/CIC-IDS2017.zip
+unzip datasets/CIC-IDS2017.zip -d datasets/CIC-IDS2017
+```
 
 4. **Install dependencies**:
-   ```sh
-   pip install -r requirements.txt
-   ```
+
+```bash
+pip install -r requirements.txt
+```
+
+---
 
 ## Usage
 
-### 1. Prepare Historical Data
+### 1. Preprocess Historical Data
 
-To preprocess and merge the raw CIC-IDS2017 CSV files:
-```sh
+```bash
 cd scripts
 python historical_data.py
 ```
-This generates historical_data.csv.
+Merges and preprocesses raw CSV files from the CIC-IDS2017 dataset into `historical_data.csv`.
 
-### 2. Download Pretrained Model
+### 2. Download Pretrained LLM
 
-To download the base model from HuggingFace:
-```sh
+```bash
 cd scripts
 python check_model_download.py
 ```
-We use Google's FLAN T5 model as our base.
+Downloads **Google’s FLAN-T5 base model** for anomaly detection.
 
-### 3. Reduce Dataset Size (Optional) and Fine-Tune the Model
+### 3. Reduce Dataset and Fine-Tune (Optional)
 
-To create a smaller, stratified dataset for quick experiments and then fine-tune the anomaly detection model:
-```sh
+```bash
 cd scripts
 python fine_tune_reduced.py
 ```
-This also generates reduced_data.csv.
+Simultaneously **creates a smaller, stratified dataset** for rapid experimentation **and fine-tunes** the anomaly detection model on it. Generates `reduced_data.csv` and updates model weights accordingly.
 
 ### 4. Fine-Tune the Model
 
-To fine-tune the anomaly detection model:
-```sh
+```bash
 cd scripts
 python fine_tune_model.py
 ```
-You can modify the script to use either the full or reduced dataset.
-
+Fine-tunes the anomaly detection model on the **full or reduced dataset**.
 
 ### 5. Run Inference
 
-To analyze network logs for anomalies:
-```sh
+```bash
 cd scripts
 python inference.py
 ```
-Edit the script to specify your log file or use the `RealTimeAnalyzer` class for real-time analysis.
+Specify your log file, or use the `RealTimeAnalyzer` class for **live network monitoring**.
+
+---
 
 ## Project Structure
 
-- datasets: Contains raw, cleaned, and reduced datasets.
-- scripts: Python scripts for data processing, model training, and inference.
-- docs: Project documentation and diagrams.
+* `datasets/` – Raw, cleaned, and reduced datasets.
+* `scripts/` – Python scripts for data preprocessing, model training, and inference.
+* `docs/` – Documentation, diagrams, and project artifacts.
+
+---
 
 ## Requirements
 
-- Python 3.8+
-- See requirements.txt for required packages (pandas, numpy, scikit-learn, transformers, peft, datasets, tqdm).
+* **Python 3.8+**
+* Key packages: `pandas`, `numpy`, `scikit-learn`, `transformers`, `peft`, `datasets`, `tqdm`
+
+```bash
+pip install -r requirements.txt
+```
+
+---
 
 ## References
 
-- [CIC-IDS2017 Dataset](https://www.unb.ca/cic/datasets/ids-2017.html)
-- See the [business requirements document](https://github.com/rajkadakia/network-anomaly-detection/blob/main/docs/HP_BRD.pdf) for business requirements and detailed documentation.
+* [CIC-IDS2017 Dataset](https://www.unb.ca/cic/datasets/ids-2017.html)
+* [Business Requirements Document (HP\_BRD.pdf)](https://github.com/rajkadakia/network-anomaly-detection/blob/main/docs/HP_BRD.pdf)
