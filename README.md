@@ -62,31 +62,33 @@ python historical_data.py
 ```
 This generates historical_data.csv.
 
-### 2. Reduce Dataset Size (Optional)
-
-To create a smaller, stratified dataset for quick experiments:
-```sh
-cd scripts
-python fine_tune_reduced.py
-```
-This generates reduced_data.csv.
-
-### 3. Fine-Tune the Model
-
-To train or fine-tune the anomaly detection model:
-```sh
-cd scripts
-python fine_tune_model.py
-```
-You can modify the script to use either the full or reduced dataset.
-
-### 4. Download Pretrained Model
+### 2. Download Pretrained Model
 
 To download the base model from HuggingFace:
 ```sh
 cd scripts
 python check_model_download.py
 ```
+We use Google's FLAN T5 model as our base.
+
+### 3. Reduce Dataset Size (Optional) and Fine-Tune the Model
+
+To create a smaller, stratified dataset for quick experiments and then fine-tune the anomaly detection model:
+```sh
+cd scripts
+python fine_tune_reduced.py
+```
+This also generates reduced_data.csv.
+
+### 4. Fine-Tune the Model
+
+To fine-tune the anomaly detection model:
+```sh
+cd scripts
+python fine_tune_model.py
+```
+You can modify the script to use either the full or reduced dataset.
+
 
 ### 5. Run Inference
 
@@ -111,4 +113,4 @@ Edit the script to specify your log file or use the `RealTimeAnalyzer` class for
 ## References
 
 - [CIC-IDS2017 Dataset](https://www.unb.ca/cic/datasets/ids-2017.html)
-- See HP_BRD.pdf for business requirements and detailed documentation.
+- See the [business requirements document](https://github.com/rajkadakia/network-anomaly-detection/blob/main/docs/HP_BRD.pdf) for business requirements and detailed documentation.
