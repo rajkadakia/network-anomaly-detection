@@ -136,4 +136,4 @@ pip install -r requirements.txt
 ## References
 
 * [CIC-IDS2017 Dataset](https://www.unb.ca/cic/datasets/ids-2017.html)
-* [Business Requirements Document (HP\_BRD.pdf)](https://github.com/rajkadakia/network-anomaly-detection/blob/main/docs/HP_BRD.pdf)
+* [Business Requirements Document](https://github.com/rajkadakia/network-anomaly-detection/blob/main/docs/HP_BRD.pdf)
