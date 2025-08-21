@@ -1,4 +1,4 @@
 models/
 venv/
-datasets/CIC-IDS2017/
+datasets/CIC-IDS2017*
 datasets/historical_data.csv
