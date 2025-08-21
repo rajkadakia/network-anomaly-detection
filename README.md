@@ -1,4 +1,7 @@
 # Network Anomaly Detection
+![GitHub Created At](https://img.shields.io/github/created-at/rajkadakia/network-anomaly-detection)
+![GitHub contributors](https://img.shields.io/github/contributors/rajkadakia/network-anomaly-detection)
+![GitHub License](https://img.shields.io/github/license/rajkadakia/network-anomaly-detection)
 
 ## Overview
 
