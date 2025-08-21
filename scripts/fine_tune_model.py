@@ -152,12 +152,12 @@ def fine_tune_model(train_texts, train_labels, eval_texts, eval_labels, model_na
 
         main_pbar.set_postfix_str("Configuring trainer")
         training_args = Seq2SeqTrainingArguments(
-            output_dir="../results",
+            output_dir="/tmp",
             eval_strategy="epoch",
             learning_rate=3e-4,
             per_device_train_batch_size=2,  # Reduced for M2 GPU memory
             per_device_eval_batch_size=2,
-            num_train_epochs=5,
+            num_train_epochs=20,
             weight_decay=0.01,
             save_total_limit=3,
             predict_with_generate=True,

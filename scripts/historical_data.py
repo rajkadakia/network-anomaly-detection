@@ -50,8 +50,7 @@ def process_cicids2017(input_dir='../datasets/CIC-IDS2017', output_file='../data
     # 6. Network-specific preprocessing
     # Drop non-essential network identifiers
     cols_to_drop = [
-        'flow id', 'source ip', 'source port',
-        'destination ip', 'destination port', 'timestamp'
+        'flow id', 'source port', 'destination ip', 'destination port'
     ]
     for col in cols_to_drop:
         if col in full_df.columns:
